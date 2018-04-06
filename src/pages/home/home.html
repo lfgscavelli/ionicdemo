@@ -1,14 +1,19 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Articles List
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-list>
+    <button ion-item  *ngFor="let c of articles" (click)="articleSelected(c)">
+      <ion-avatar item-left>
+        <img src="{{c.image}}" style="height: 25px!important;">
+      </ion-avatar>
+    <h2>{{c.title}}</h2>
+    <p>Data: {{c.date_created | date: 'dd/MM/yyyy'}}</p>
+    </button>
+  </ion-list>
 </ion-content>

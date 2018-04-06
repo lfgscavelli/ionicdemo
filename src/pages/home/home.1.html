@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Articles List
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+      <button ion-item  *ngFor="let c of articles" (click)="articleSelected(c)">
+        <ion-avatar item-left>
+            <img src="{{c.image}}">
+        </ion-avatar>
+        <h2>{{c.title}}</h2>
+        <p>Data: {{c.date_created}}</p>
+      </button>
+  </ion-list>
+</ion-content>
